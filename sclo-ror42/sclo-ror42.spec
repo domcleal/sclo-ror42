@@ -153,7 +153,7 @@ EOF
 
 
 %changelog
-* Fri Dec 11 2015 Dominic Cleal <dcleal@redhat.com> - 3.0-1
+* Fri Dec 11 2015 Dominic Cleal <dcleal@redhat.com> 3.0-1
 - Update metapackage from rh-ror41 to sclo-ror42
 
 * Tue Mar 31 2015 Vít Ondruch <vondruch@redhat.com> - 2.0-6
