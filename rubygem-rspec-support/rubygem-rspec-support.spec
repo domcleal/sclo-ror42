@@ -98,7 +98,7 @@ popd
 %dir	%{gem_instdir}
 %doc	%{gem_instdir}/Changelog.md
 %doc	%{gem_instdir}/README.md
-%license	%{gem_instdir}/LICENSE.txt
+%doc	%{gem_instdir}/LICENSE.txt
 
 %{gem_libdir}
 %exclude %{gem_cache}

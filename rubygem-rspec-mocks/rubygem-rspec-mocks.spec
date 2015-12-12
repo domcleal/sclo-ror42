@@ -96,7 +96,7 @@ popd
 %files
 %dir	%{gem_instdir}
 
-%license	%{gem_instdir}/License.txt
+%doc	%{gem_instdir}/License.txt
 %doc	%{gem_instdir}/*.md
 %{gem_instdir}/lib/
 

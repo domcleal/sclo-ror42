@@ -68,7 +68,7 @@ cp -a .%{gem_dir}/* \
 %files
 %dir	%{gem_instdir}
 %{gem_instdir}/lib
-%license	%{gem_instdir}/License.txt
+%doc	%{gem_instdir}/License.txt
 %doc	%{gem_instdir}/README.md
 %exclude %{gem_cache}
 %{gem_spec}
