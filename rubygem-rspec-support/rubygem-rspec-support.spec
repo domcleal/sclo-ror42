@@ -6,7 +6,7 @@
 %global	mainver	3.3.0
 %undefine	prever
 
-%global	mainrel	2
+%global	mainrel	3
 %global	prerpmver	%(echo "%{?prever}" | sed -e 's|\\.||g')
 
 %global	need_bootstrap_set	1
@@ -108,6 +108,9 @@ popd
 %doc	%{gem_docdir}
 
 %changelog
+* Sat Dec 12 2015 Dominic Cleal <dcleal@redhat.com> 3.3.0-3
+- Replace %%license for EL6 compatibility
+
 * Sun Aug  2 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.3.0-2
 - Enable tests again
 
