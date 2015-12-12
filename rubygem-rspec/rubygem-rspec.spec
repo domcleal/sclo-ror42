@@ -10,7 +10,7 @@
 Summary:	Behaviour driven development (BDD) framework for Ruby
 Name:		%{?scl_prefix}rubygem-%{gem_name}
 Version:	3.3.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 
 Group:		Development/Languages
 License:	MIT
@@ -77,6 +77,9 @@ cp -a .%{gem_dir}/* \
 %doc	%{gem_docdir}
 
 %changelog
+* Sat Dec 12 2015 Dominic Cleal <dcleal@redhat.com> 3.3.0-2
+- Replace %%license for EL6 compatibility
+
 * Sun Aug  2 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.3.0-1
 - 3.3.0
 
