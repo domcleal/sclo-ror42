@@ -1,126 +1,72 @@
-%{?scl:%scl_package rubygem-%{gem_name}}
 %{!?scl:%global pkg_name %{name}}
+%{?scl:%scl_package rubygem-%{gem_name}}
 
-%global	gem_name	rspec
+%global gem_name rspec
 
 # not necessarily same as %%{version}
-%global dep_version_min 3.3.0
-%global dep_version_max 3.4.0
+%global dep_version 2.14.5
 
-Summary:	Behaviour driven development (BDD) framework for Ruby
-Name:		%{?scl_prefix}rubygem-%{gem_name}
-Version:	3.3.0
-Release:	2%{?dist}
-
-Group:		Development/Languages
-License:	MIT
-URL:		http://rspec.info
-Source0:	http://rubygems.org/gems/%{gem_name}-%{version}.gem
-
+Summary: Behaviour driven development (BDD) framework for Ruby
+Name: %{?scl_prefix}rubygem-%{gem_name}
+Version: 2.14.1
+Release: 1%{?dist}
+Group: Development/Languages
+License: MIT
+URL: http://rspec.info
+Source0: http://rubygems.org/downloads/%{gem_name}-%{version}.gem
+BuildRoot: %{_tmppath}/%{pkg_name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires: %{?scl_prefix_ruby}rubygems
-Requires: %{?scl_prefix}rubygem(rspec-core) >= %{dep_version_min}
-Requires: %{?scl_prefix}rubygem(rspec-core) < %{dep_version_max}
-Requires: %{?scl_prefix}rubygem(rspec-mocks) >= %{dep_version_min}
-Requires: %{?scl_prefix}rubygem(rspec-mocks) < %{dep_version_max}
-Requires: %{?scl_prefix}rubygem(rspec-expectations) >= %{dep_version_min}
-Requires: %{?scl_prefix}rubygem(rspec-expectations) < %{dep_version_max}
-BuildRequires:	%{?scl_prefix_ruby}rubygems-devel
-BuildRequires:	%{?scl_prefix_ruby}ruby(release)
-Provides: %{?scl_prefix}rubygem(%{gem_name}) = %{version}-%{release}
-
-BuildArch:	noarch
+Requires: %{?scl_prefix}rubygem(rspec-core) = %{dep_version}
+Requires: %{?scl_prefix}rubygem(rspec-mocks) = %{dep_version}
+Requires: %{?scl_prefix}rubygem(rspec-expectations) = %{dep_version}
+Requires: %{?scl_prefix_ruby}ruby(release)
+BuildRequires: %{?scl_prefix_ruby}rubygems-devel
+BuildRequires: %{?scl_prefix_ruby}ruby(release)
+BuildArch: noarch
+Provides: %{?scl_prefix}rubygem(%{gem_name}) = %{version}
 
 %description
 RSpec is a behaviour driven development (BDD) framework for Ruby.  
 
-%package	doc
-Summary:	Documentation for %{pkg_name}
-Group:		Documentation
-Requires:	%{?scl_prefix}%{pkg_name} = %{version}-%{release}
-
-%description	doc
-This package contains documentation for %{pkg_name}.
-
 %prep
-%{?scl:scl enable %{scl} - << \EOF}
-gem unpack %{SOURCE0}
-%{?scl:EOF}
-
-%setup -q -D -T -n  %{gem_name}-%{version}
+%setup -q -c -T
 
 %{?scl:scl enable %{scl} - << \EOF}
-gem specification %{SOURCE0} -l --ruby > %{gem_name}.gemspec
+%gem_install -n %{SOURCE0}
 %{?scl:EOF}
 
 %build
-%{?scl:scl enable %{scl} - << \EOF}
-gem build %{gem_name}.gemspec
-%{?scl:EOF}
-%{?scl:scl enable %{scl} - << \EOF}
-%gem_install
-%{?scl:EOF}
 
 %install
+rm -rf %{buildroot}
 mkdir -p %{buildroot}%{gem_dir}
-cp -a .%{gem_dir}/* \
-	%{buildroot}%{gem_dir}/
+cp -a .%{gem_dir}/* %{buildroot}%{gem_dir}
 
 %files
-%dir	%{gem_instdir}
+%doc %{gem_docdir}
+%dir %{gem_instdir}
 %{gem_instdir}/lib
-%doc	%{gem_instdir}/License.txt
-%doc	%{gem_instdir}/README.md
+%{gem_instdir}/License.txt
+%{gem_instdir}/README.md
 %exclude %{gem_cache}
 %{gem_spec}
 
-%files	doc
-%doc	%{gem_docdir}
-
 %changelog
-* Sat Dec 12 2015 Dominic Cleal <dcleal@redhat.com> 3.3.0-2
-- Replace %%license for EL6 compatibility
+* Fri Jan 16 2015 Josef Stribny <jstribny@redhat.com> - 2.14.1-1
+- Update to 2.14.1
 
-* Sun Aug  2 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.3.0-1
-- 3.3.0
-
-* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.2.0-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
-
-* Mon Feb  9 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.2.0-1
-- 3.2.0
-
-* Mon Nov 10 2014 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.1.0-1
-- 3.1.0
-
-* Fri Aug 15 2014 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.0.0-1
-- 3.0.0
-
-* Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.14.1-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
-
-* Fri Aug 16 2013 Mamoru TASAKA <mtasaka@fedoraproject.og> - 2.14.1-1
-- 2.14.1
-
-* Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.13.0-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
-
-* Thu Mar 28 2013 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.13.0-1
-- 2.13.0
-
-* Wed Feb 20 2013 Vít Ondruch <vondruch@redhat.com> - 2.12.0-3
+* Mon May 20 2013 Josef Stribny <jstribny@redhat.com> - 2.11.0-3
 - Rebuild for https://fedoraproject.org/wiki/Features/Ruby_2.0.0
 
-* Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.12.0-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+* Wed Feb 27 2013 Vít Ondruch <vondruch@redhat.com> - 2.11.0-2
+- Rebuild to fix documentation vulnerability due to CVE-2013-0256.
 
-* Wed Jan  2 2013 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.12.0-1
-- Update to Rspec 2.12.0
+* Tue Jul 24 2012 Bohuslav Kabrda <bkabrda@redhat.com> - 2.11.0-1
+- Update to Rspec 2.11.0.
+- Specfile cleanup.
 
-* Thu Oct 11 2012 Mamoru Tasaka <mtasaka@fedoraproject.org> - 2.11.0-1
-- Update to Rspec 2.11.0
-
-* Sat Jul 21 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.8.0-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
+* Fri Mar 30 2012 Bohuslav Kabrda <bkabrda@redhat.com> - 2.8.0-2
+- Rebuilt for scl.
 
 * Mon Mar 05 2012 Vít Ondruch <bkabrda@redhat.com> - 2.8.0-1
 - Update to RSpec 2.8.0.
@@ -128,7 +74,7 @@ cp -a .%{gem_dir}/* \
 * Sat Jan 14 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.3.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
 
-* Mon Mar 07 2011 Mamoru Tasaka <mtasaka@fedoraproject.org> - 1.3.1-1
+* Mon Mar 09 2011 Mamoru Tasaka <mtasaka@fedoraproject.org> - 1.3.1-1
 - Update from Marek Goldmann <mgoldman@redhat.com>
   - Updated to 1.3.1
   - Patch to make it work with Rake >= 0.9.0.beta.0

@@ -1,43 +1,29 @@
-%{?scl:%scl_package rubygem-%{gem_name}}
 %{!?scl:%global pkg_name %{name}}
-
-%global	majorver	3.3.2
-#%%global	preminorver	.rc6
-%global	rpmminorver	.%(echo %preminorver | sed -e 's|^\\.\\.*||')
-%global	fullver	%{majorver}%{?preminorver}
-
-%global	fedorarel	4
+%{?scl:%scl_package rubygem-%{gem_name}}
 
 %global	gem_name	rspec-mocks
 
-%global	need_bootstrap_set	1
+# %%check section needs rspec, however rspec depends on rspec-mocks
+%global	need_bootstrap	1
 
 Summary:	Rspec-2 doubles (mocks and stubs)
 Name:		%{?scl_prefix}rubygem-%{gem_name}
-Version:	%{majorver}
-Release:	%{?preminorver:0.}%{fedorarel}%{?preminorver:%{rpmminorver}}%{?dist}
+Version:2.14.5
+Release:2%{?dist}
 
 Group:		Development/Languages
 License:	MIT
 URL:		http://github.com/rspec/rspec-mocks
-Source0:	https://rubygems.org/gems/%{gem_name}-%{fullver}.gem
-# %%{SOURCE2} %%{pkg_name} %%{version} 
-Source1:	rubygem-%{gem_name}-%{version}-full.tar.gz
-Source2:	rspec-related-create-full-tarball.sh
+Source0:	http://rubygems.org/gems/%{gem_name}-%{version}.gem
 
-Requires:       %{?scl_prefix_ruby}ruby(release)
-Requires:       %{?scl_prefix}rubygem(diff-lcs) >= 1.2.0
-Requires:       %{?scl_prefix}rubygem(diff-lcs) < 2.0
-Requires:       %{?scl_prefix}rubygem(rspec-support) >= 3.3.0
-Requires:       %{?scl_prefix}rubygem(rspec-support) < 3.4.0
 BuildRequires:	%{?scl_prefix_ruby}ruby(release)
 BuildRequires:	%{?scl_prefix_ruby}rubygems-devel
-%if 0%{?need_bootstrap_set} < 1
+%if 0%{?need_bootstrap} < 1
 BuildRequires:	%{?scl_prefix}rubygem(rspec)
-BuildRequires:	%{?scl_prefix}rubygem(thread_order)
-BuildRequires:	git
 %endif
-Provides:   %{?scl_prefix}rubygem(%{gem_name}) = %{version}-%{release}
+Requires:	%{?scl_prefix_ruby}ruby(release)
+Requires:	%{?scl_prefix_ruby}rubygems
+Provides:	%{?scl_prefix}rubygem(%{gem_name}) = %{version}-%{release}
 BuildArch:	noarch
 
 %description
@@ -52,147 +38,76 @@ Requires:	%{?scl_prefix}%{pkg_name} = %{version}-%{release}
 %description	doc
 This package contains documentation for %{pkg_name}.
 
+
 %prep
-%{?scl:scl enable %{scl} - << \EOF}
-gem unpack %{SOURCE0}
-%{?scl:EOF}
-
-%setup -q -D -T -n  %{gem_name}-%{version} -a 1
+%setup -q -c -T
 
 %{?scl:scl enable %{scl} - << \EOF}
-gem specification %{SOURCE0} -l --ruby > %{gem_name}.gemspec
+%gem_install -n %{SOURCE0}
 %{?scl:EOF}
 
 %build
-%{?scl:scl enable %{scl} - << \EOF}
-gem build %{gem_name}.gemspec
-%{?scl:EOF}
-%{?scl:scl enable %{scl} - << \EOF}
-%gem_install
-%{?scl:EOF}
 
 %install
 mkdir -p %{buildroot}%{gem_dir}
-cp -a .%{gem_dir}/* \
-	%{buildroot}%{gem_dir}/
+cp -a .%{gem_dir}/* %{buildroot}%{gem_dir}/
 
-# cleanups
-rm -f %{buildroot}%{gem_instdir}/{.document,.yardopts}
-
-%if 0%{?need_bootstrap_set} < 1
-
+%if 0%{?need_bootstrap} < 1
 %check
-pushd  %{gem_name}-%{version}
-
-# library_wide_checks.rb needs UTF-8
-LANG=en_US.utf8
-%{?scl:scl enable %{scl} - << \EOF}
-ruby -rubygems -Ilib/ -S rspec spec/
-%{?scl:EOF}
-
+pushd .%{gem_instdir}
+%{?scl:scl enable %scl "}
+# YAML::ENGINE has been removed from Ruby 2.2.
+# https://github.com/rspec/rspec-mocks/commit/c152810e4e00f1fe7a5fc4ba5e6f9d8e9e2593e9
+rspec -r yaml -Ilib spec/ | grep '920 examples, 4 failures, 3 pending'
+%{?scl:"}
 popd
 %endif
 
 %files
-%dir	%{gem_instdir}
-
-%doc	%{gem_instdir}/License.txt
-%doc	%{gem_instdir}/*.md
-%{gem_instdir}/lib/
-
-%exclude	%{gem_cache}
+%dir %{gem_instdir}
+%doc %{gem_instdir}/License.txt
+%{gem_libdir}
+%exclude %{gem_instdir}/.*
+%exclude %{gem_cache}
 %{gem_spec}
 
+
 %files	doc
-%{gem_docdir}
+%doc %{gem_docdir}
+%doc %{gem_instdir}/*.md
+%{gem_instdir}/features/
+%{gem_instdir}/spec/
 
 %changelog
-* Sat Dec 12 2015 Dominic Cleal <dcleal@redhat.com> 3.3.2-4
-- Replace %%license for EL6 compatibility
-
-* Wed Aug 12 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.3.2-3
-- Enable thread_order dependent tests
-
-* Sun Aug  2 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.3.2-2
-- Enable tests again
-
-* Sun Aug  2 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.3.2-1
-- 3.3.2
-- Once disable tests
-
-* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.2.1-1.1
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
-
-* Wed Feb 25 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.2.1-1
-- 3.2.1
-
-* Mon Feb  9 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.2.0-2
-- Enable tests again
-
-* Mon Feb  9 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.2.0-1
-- 3.2.0
-- Once disable tests
-
-* Mon Nov 10 2014 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.1.3-2
+* Fri Jan 16 2015 Josef Stribny <jstribny@redhat.com> - 2.14.5-2
 - Enable tests
 
-* Mon Nov 10 2014 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.1.3-1
-- 3.1.3
-- Once disable tests
+* Fri Jan 16 2015 Josef Stribny <jstribny@redhat.com> - 2.14.5-1
+- Update to 2.14.5
 
-* Fri Aug 15 2014 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.0.4-1
-- 3.0.4
+* Fri Mar 21 2014 Vít Ondruch <vondruch@redhat.com> - 2.11.1-5
+- Rebuid against new scl-utils to depend on -runtime package.
+  Resolves: rhbz#1069109
 
-* Thu Aug 14 2014 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.0.3-1
-- 3.0.3
+* Wed Nov 20 2013 Josef Stribny <jstribny@redhat.com> - 2.11.1-4
+- Allow test suite.
 
-* Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.14.6-1.1
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+* Tue Nov 19 2013 Josef Stribny <jstribny@redhat.com> - 2.11.1-3
+- Add missing dist tag.
+- Resolves: rhbz#967006
 
-* Thu Feb 27 2014 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.14.6-1
-- 2.14.6
-
-* Tue Feb  4 2014 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.14.5-1
-- 2.14.5
-
-* Thu Oct 24 2013 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.14.4-1
-- 2.14.4
-
-* Fri Aug 16 2013 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.14.3-2
-- Enable test suite again
-
-* Fri Aug 16 2013 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.14.3-1
-- 2.14.3
-
-* Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.13.1-1.1
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
-
-* Fri Apr 12 2013 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.13.1-1
-- 2.13.1
-
-* Thu Mar 28 2013 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.13.0-2
-- Enable test suite again
-
-* Thu Mar 28 2013 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.13.0-1
-- 2.13.0
-
-* Wed Feb 20 2013 Vít Ondruch <vondruch@redhat.com> - 2.12.2-2
+* Tue May 21 2013 Josef Stribny <jstribny@redhat.com> - 2.11.1-2
 - Rebuild for https://fedoraproject.org/wiki/Features/Ruby_2.0.0
 
-* Mon Feb  4 2013 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.12.2-1
-- 2.12.2
+* Tue Jul 24 2012 Bohuslav Kabrda <bkabrda@redhat.com> - 2.11.1-1
+- Update to Rspec-Mocks 2.11.1.
+- Specfile cleanup.
 
-* Wed Jan  2 2013 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.12.1-2
-- Enable test suite again
+* Fri Mar 30 2012 Bohuslav Kabrda <bkabrda@redhat.com> - 2.8.0-3
+- Allow tests.
 
-* Wed Jan  2 2013 Mamoru TASAKA <mtasaka@fedoraproject.org> - 2.12.1-1
-- 2.12.1
-
-* Thu Oct 11 2012 Mamoru Tasaka <mtasaka@fedoraproject.org> - 2.11.3-1
-- 2.11.3
-
-* Sat Jul 21 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.8.0-1.1
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
+* Fri Mar 30 2012 Bohuslav Kabrda <bkabrda@redhat.com> - 2.8.0-2
+- Rebuilt for scl.
 
 * Sun Jan 22 2012 Mamoru Tasaka <mtasaka@fedoraproject.org> - 2.8.0-1
 - 2.8.0
