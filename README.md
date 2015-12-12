@@ -13,6 +13,10 @@ This repo uses [tito](https://github.com/dgoodwin/tito) and
 It's pre-release, so EVRs may not match what's eventually imported into SCLo,
 and it may not upgrade from one to the other.  Use at your own risk, etc.
 
+Packages are built into [copr
+domcleal/sclo-ror42](https://copr.fedoraproject.org/coprs/domcleal/sclo-ror42/)
+on completion.
+
 ## Contributing
 
 Help would be appreciated.  Please get in contact via [the SCLorg mailing
