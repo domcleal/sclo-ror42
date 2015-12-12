@@ -6,7 +6,7 @@
 %global	rpmminorver	.%(echo %preminorver | sed -e 's|^\\.\\.*||')
 %global	fullver	%{majorver}%{?preminorver}
 
-%global	fedorarel	3
+%global	fedorarel	4
 
 %global	gem_name	rspec-core
 
@@ -154,6 +154,9 @@ popd
 %{gem_docdir}
 
 %changelog
+* Sat Dec 12 2015 Dominic Cleal <dcleal@redhat.com> 3.3.2-4
+- Replace %%license for EL6 compatibility
+
 * Wed Aug 12 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.3.2-3
 - Enable thread_order dependent tests
 
