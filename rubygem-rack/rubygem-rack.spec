@@ -79,7 +79,7 @@ popd
 
 %files
 %dir %{gem_instdir}
-%license %{gem_instdir}/COPYING
+%doc %{gem_instdir}/COPYING
 %{gem_libdir}
 %{gem_instdir}/bin
 %{_bindir}/rackup
