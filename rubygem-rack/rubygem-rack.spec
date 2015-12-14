@@ -8,7 +8,7 @@ Summary:        Common API for connecting web frameworks, web servers and layers
 # Introduce Epoch (related to bug 552972)
 Epoch:          1
 Version:        1.6.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Group:          Development/Languages
 # lib/rack/backports/uri/* are taken from Ruby which is (Ruby or BSD)
 # lib/rack/show{status,exceptions}.rb contains snippets from Django under BSD license.
@@ -99,6 +99,9 @@ popd
 %doc %{gem_instdir}/contrib
 
 %changelog
+* Mon Dec 14 2015 Dominic Cleal <dcleal@redhat.com> 1.6.2-2
+- Replace %%license for EL6 compatibility
+
 * Wed Jun 17 2015 Vít Ondruch <vondruch@redhat.com> - 1:1.6.2-1
 - Update to Rack 1.6.2.
 
