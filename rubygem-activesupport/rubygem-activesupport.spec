@@ -48,8 +48,8 @@ Requires: %{?scl_prefix}rubygem(i18n) >= 0.7
 Requires: %{?scl_prefix}rubygem(i18n) < 1
 Requires: %{?scl_prefix_ruby}rubygem(json) >= 1.7.7
 Requires: %{?scl_prefix_ruby}rubygem(json) < 2
-Requires: %{?scl_prefix}rubygem(minitest) >= 5.1
-Requires: %{?scl_prefix}rubygem(minitest) < 6
+Requires: %{?scl_prefix_ruby}rubygem(minitest) >= 5.1
+Requires: %{?scl_prefix_ruby}rubygem(minitest) < 6
 Requires: %{?scl_prefix}rubygem(thread_safe) >= 0.3.4
 Requires: %{?scl_prefix}rubygem(thread_safe) < 1
 Requires: %{?scl_prefix}rubygem(tzinfo) >= 1.1
