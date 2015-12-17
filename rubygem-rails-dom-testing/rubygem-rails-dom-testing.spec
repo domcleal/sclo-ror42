@@ -14,11 +14,11 @@ URL: https://github.com/kaspth/rails-dom-testing
 Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
 Requires: %{?scl_prefix_ruby}ruby(release)
 Requires: %{?scl_prefix_ruby}ruby(rubygems)
-Requires: %{?scl_prefix_ruby}rubygem(activesupport) >= 4.1.0.beta
-Requires: %{?scl_prefix_ruby}rubygem(activesupport) < 5.0
-Requires: %{?scl_prefix_ruby}rubygem(nokogiri) >= 1.6.0
-Requires: %{?scl_prefix_ruby}rubygem(nokogiri) < 1.7
-Requires: %{?scl_prefix_ruby}rubygem(rails-deprecated_sanitizer) >= 1.0.1
+Requires: %{?scl_prefix}rubygem(activesupport) >= 4.1.0.beta
+Requires: %{?scl_prefix}rubygem(activesupport) < 5.0
+Requires: %{?scl_prefix}rubygem(nokogiri) >= 1.6.0
+Requires: %{?scl_prefix}rubygem(nokogiri) < 1.7
+Requires: %{?scl_prefix}rubygem(rails-deprecated_sanitizer) >= 1.0.1
 BuildRequires: %{?scl_prefix_ruby}ruby(release)
 BuildRequires: %{?scl_prefix_ruby}rubygems-devel 
 BuildRequires: %{?scl_prefix_ruby}ruby 
@@ -88,7 +88,7 @@ ruby -Ilib:test -e 'Dir.glob "./test/**/*_test.rb", &method(:require)'
 popd
 
 %files
-%license %{gem_instdir}/LICENSE.txt
+%doc %{gem_instdir}/LICENSE.txt
 %dir %{gem_instdir}
 %{gem_libdir}
 %exclude %{gem_cache}
