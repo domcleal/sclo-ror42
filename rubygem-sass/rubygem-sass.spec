@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 3.4.19
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A powerful but elegant CSS compiler that makes CSS fun again
 Group: Development/Languages
 License: MIT
@@ -112,6 +112,9 @@ popd
 %{gem_instdir}/test
 
 %changelog
+* Thu Dec 17 2015 Dominic Cleal <dcleal@redhat.com> 3.4.19-2
+- Replace %%license for EL6 compatibility
+
 * Mon Oct 12 2015 Vít Ondruch <vondruch@redhat.com> - 3.4.19-1
 - Update to Sass 3.4.19.
 
