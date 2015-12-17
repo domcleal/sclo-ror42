@@ -1,33 +1,17 @@
 %{?scl:%scl_package rubygem-%{gemname}}
 %{!?scl:%global pkg_name %{name}}
 
-%if 0%{?fedora} <= 16 && 0%{?rhel} <= 6
-%global        ruby_sitelib            %(ruby -rrbconfig -e "puts Config::CONFIG['sitelibdir']")
-%global        ruby_sitearch           %(ruby -rrbconfig -e "puts Config::CONFIG['sitearchdir']")
-%endif
-
 %global	mainver		1.6.7
 %global	prever		.rc3
 
 %global	mainrel		3
 %global	prerpmver		%(echo "%{?prever}" | sed -e 's|\\.||g')
 
-%global	gemdir			%(ruby -rubygems -e 'puts Gem::dir' 2>/dev/null)
 %global	gemname		nokogiri
-%global	geminstdir		%{gemdir}/gems/%{gemname}-%{mainver}%{?prever}
-
-%if 0%{?fedora} >= 17 || 0%{?rhel} >= 7
-%if 0%{?fedora} < 19
-%global	rubyabi	1.9.1
-%endif
 %global	ruby19		1
 %global	gemdir		%{gem_dir}
 %global	geminstdir	%{gem_instdir}
 %global	gemsodir	%{gem_extdir_mri}/lib
-%else
-%global	ruby19		0
-%global	gemsodir	%{ruby_sitearch}
-%endif
 %global	gem_name	%{gemname}
 
 # Note for packager:
@@ -151,7 +135,7 @@ export NOKOGIRI_USE_SYSTEM_LIBRARIES=yes
 
 
 # Permission
-chmod 0644 .%{gemdir}/cache/%{gemname}-%{mainver}%{?prever}.gem
+chmod 0644 .%{gem_cache}
 
 # Remove precompiled Java .jar file
 rm -f .%{geminstdir}/lib/*.jar
