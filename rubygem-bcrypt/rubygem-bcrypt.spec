@@ -80,7 +80,7 @@ popd
 %{gem_instdir}/spec
 
 %changelog
-* Thu Dec 17 2015 Dominic Cleal <dcleal@redhat.com> - 3.1.10-1
+* Thu Dec 17 2015 Dominic Cleal <dcleal@redhat.com> 3.1.10-1
 - Update to 3.1.10
 
 * Thu Jan 22 2015 Josef Stribny <jstribny@redhat.com> - 3.1.9-2
