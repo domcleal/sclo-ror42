@@ -4,7 +4,7 @@
 %global	mainver		1.6.7
 %global	prever		.rc3
 
-%global	mainrel		3
+%global	mainrel		4
 %global	prerpmver		%(echo "%{?prever}" | sed -e 's|\\.||g')
 
 %global	gemname		nokogiri
@@ -237,6 +237,9 @@ popd
 %{gemdir}/doc/%{gemname}-%{mainver}%{?prever}/
 
 %changelog
+* Thu Dec 17 2015 Dominic Cleal <dcleal@redhat.com> 1.6.7-0.4.rc3
+- Fix macro expansions for EL6 under SCL
+
 * Fri Dec 11 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 1.6.7-0.3.rc3
 - Shutdown libxml2 version mismatch warning
 * Tue Dec  8 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 1.6.7-0.2.rc3
