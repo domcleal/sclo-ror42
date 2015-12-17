@@ -80,7 +80,7 @@ popd
 %doc %{gem_instdir}/README.md
 
 %changelog
-* Thu Dec 17 2015 Dominic Cleal <dcleal@redhat.com> - 2.4.1-1
+* Thu Dec 17 2015 Dominic Cleal <dcleal@redhat.com> 2.4.1-1
 - Update to 2.4.1
 
 * Mon Jan 26 2015 Josef Stribny <jstribny@redhat.com> - 2.2.0-6
