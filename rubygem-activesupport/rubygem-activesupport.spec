@@ -7,7 +7,7 @@ Summary: Support and utility classes used by the Rails framework
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Epoch: 1
 Version: 4.2.5
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://www.rubyonrails.org
@@ -120,6 +120,9 @@ popd
 %{gem_instdir}/test
 
 %changelog
+* Thu Dec 17 2015 Dominic Cleal <dcleal@redhat.com> 4.2.5-2
+- Fix dependency on minitest
+
 * Wed Nov 18 2015 Pavel Valena <pvalena@redhat.com> - 1:4.2.5-1
 - Update to activesupport 4.2.5
 
