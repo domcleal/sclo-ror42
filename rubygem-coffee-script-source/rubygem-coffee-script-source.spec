@@ -62,7 +62,7 @@ cp -a .%{gem_dir}/* \
 %doc %{gem_docdir}
 
 %changelog
-* Thu Dec 17 2015 Dominic Cleal <dcleal@redhat.com> - 1.10.0-1
+* Thu Dec 17 2015 Dominic Cleal <dcleal@redhat.com> 1.10.0-1
 - Update to 1.10.0
 
 * Mon Jan 26 2015 Josef Stribny <jstribny@redhat.com> - 1.6.3-1
