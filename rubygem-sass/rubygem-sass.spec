@@ -89,7 +89,7 @@ popd
 %{_bindir}/scss
 %exclude %{gem_instdir}/.*
 %{gem_instdir}/CODE_OF_CONDUCT.md
-%license %{gem_instdir}/MIT-LICENSE
+%doc %{gem_instdir}/MIT-LICENSE
 %doc %{gem_instdir}/REVISION
 %{gem_instdir}/VERSION
 %{gem_instdir}/VERSION_DATE
