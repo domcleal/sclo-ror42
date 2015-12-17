@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.0.5
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Compares doms and assert certain elements exists in doms using Nokogiri
 Group: Development/Languages
 License: MIT
@@ -100,6 +100,9 @@ popd
 %{gem_instdir}/test
 
 %changelog
+* Thu Dec 17 2015 Dominic Cleal <dcleal@redhat.com> 1.0.5-3
+- Fix SCL dependencies, license tag for EL6
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.5-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
