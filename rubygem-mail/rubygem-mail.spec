@@ -80,7 +80,7 @@ popd
 %{gem_instdir}/Rakefile
 
 %changelog
-* Fri Dec 18 2015 Dominic Cleal <dcleal@redhat.com> - 2.6.1-1
+* Fri Dec 18 2015 Dominic Cleal <dcleal@redhat.com> 2.6.1-1
 - Update to 2.6.1
 
 * Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.5.4-2
