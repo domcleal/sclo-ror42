@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.10.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A common interface to multiple JSON libraries
 Group: Development/Languages
 License: MIT
@@ -98,6 +98,9 @@ popd
 %{gem_instdir}/spec
 
 %changelog
+* Fri Dec 18 2015 Dominic Cleal <dcleal@redhat.com> 1.10.1-3
+- Fix missing provides rubygem
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.10.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
