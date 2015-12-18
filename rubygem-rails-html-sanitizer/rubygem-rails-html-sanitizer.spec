@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.0.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: This gem is responsible to sanitize HTML fragments in Rails applications
 Group: Development/Languages
 License: MIT
@@ -96,6 +96,9 @@ popd
 %{gem_instdir}/test
 
 %changelog
+* Fri Dec 18 2015 Dominic Cleal <dcleal@redhat.com> 1.0.2-2
+- Ignore libxml2 related test failure on EL6
+
 * Tue Jun 30 2015 Josef Stribny <jstribny@redhat.com> - 1.0.2-1
 - Update to 1.0.2
 
