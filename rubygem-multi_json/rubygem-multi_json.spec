@@ -22,6 +22,7 @@ BuildRequires: %{?scl_prefix_ruby}rubygem(json)
 # json_pure won't be in the collection
 #BuildRequires: %{?scl_prefix}rubygem(json_pure)
 BuildArch: noarch
+Provides: %{?scl_prefix}rubygem(%{gem_name}) = %{version}
 # OkJson is allowed to be bundled:
 # https://fedorahosted.org/fpc/ticket/113
 Provides: %{?scl_prefix}bundled(okjson) = 43
