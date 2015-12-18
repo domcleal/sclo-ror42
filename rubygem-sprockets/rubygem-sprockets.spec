@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 3.2.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Rack-based asset packaging system
 Group: Development/Languages
 License: MIT
@@ -115,6 +115,9 @@ popd
 %doc %{gem_instdir}/README.md
 
 %changelog
+* Fri Dec 18 2015 Dominic Cleal <dcleal@redhat.com> 3.2.0-3
+- Fix missing provides rubygem
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.2.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
