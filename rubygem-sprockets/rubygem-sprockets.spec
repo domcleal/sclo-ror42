@@ -34,6 +34,7 @@ BuildRequires: %{?scl_prefix}rubygem(sass)
 BuildRequires: %{?scl_prefix}rubygem(therubyracer)
 BuildRequires: %{?scl_prefix}rubygem(uglifier)
 BuildArch: noarch
+Provides: %{?scl_prefix}rubygem(%{gem_name}) = %{version}
 
 %description
 Sprockets is a Rack-based asset packaging system that concatenates and serves
