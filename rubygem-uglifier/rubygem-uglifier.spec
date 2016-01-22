@@ -7,7 +7,7 @@
 Summary: Ruby wrapper for UglifyJS JavaScript compressor
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 2.4.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 # Uglifier itself is MIT
 # the bundled JavaScript from UglifyJS is BSD
@@ -88,6 +88,9 @@ popd
 %doc %{gem_instdir}/CONTRIBUTING.md
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 2.4.0-2
+- Rebuild for sclo-ror42 SCL
+
 * Mon Jan 26 2015 Josef Stribny <jstribny@redhat.com> - 2.4.0-1
 - Update to 2.4.0
 
