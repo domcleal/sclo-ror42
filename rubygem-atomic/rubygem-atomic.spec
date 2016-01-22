@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.1.16
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: An atomic reference implementation for JRuby, Rubinius, and MRI
 Group: Development/Languages
 License: ASL 2.0
@@ -82,6 +82,9 @@ popd
 %{gem_instdir}/test
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.1.16-2
+- Rebuild for sclo-ror42 SCL
+
 * Wed Jan 14 2015 Vít Ondruch <vondruch@redhat.com> - 1.1.16-1
 - Update to atomic 1.1.16.
 
