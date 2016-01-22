@@ -7,7 +7,7 @@
 Summary: Simply adds a declarative test method syntax to test/unit
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 0.0.5
-Release: 6%{?dist}
+Release: 7%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://github.com/svenfuchs/test_declarative
@@ -75,6 +75,9 @@ popd
 
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 0.0.5-7
+- Rebuild for sclo-ror42 SCL
+
 * Mon Jan 19 2015 Josef Stribny <jstribny@redhat.com> - 0.0.5-6
 - Use Minitest 5
 
