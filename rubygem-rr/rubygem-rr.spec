@@ -6,7 +6,7 @@
 Summary: RR (Double Ruby) is a test double framework 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.1.2
-Release: 4%{?dist}
+Release: 5%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://pivotallabs.com
@@ -118,6 +118,9 @@ rm  -rf %{buildroot}%{gem_instdir}/gemfiles
 %{gem_instdir}/rr.gemspec
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.1.2-5
+- Rebuild for sclo-ror42 SCL
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.2-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
