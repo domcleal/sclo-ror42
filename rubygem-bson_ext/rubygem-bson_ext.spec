@@ -15,7 +15,7 @@
 Summary: C extensions for Ruby BSON
 Name: %{?scl:%scl_prefix}rubygem-%{gem_name}
 Version: 1.10.2
-Release: 5%{?dist}
+Release: 6%{?dist}
 Group: Development/Languages
 License: ASL 2.0
 URL: http://www.mongodb.org/display/DOCS/BSON
@@ -132,6 +132,9 @@ popd
 %{gem_instdir}/bson_ext.gemspec
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.10.2-6
+- Rebuild for sclo-ror42 SCL
+
 * Fri Mar 20 2015 Josef Stribny <jstribny@redhat.com> - 1.10.2-5
 - Fix provides filtering on RHEL7
   - Related: rhbz#1203138
