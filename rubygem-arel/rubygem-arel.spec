@@ -6,7 +6,7 @@
 Summary: Arel is a Relational Algebra for Ruby
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 6.0.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://github.com/rails/%{gem_name}
@@ -79,6 +79,9 @@ popd
 %doc %{gem_docdir}
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 6.0.3-2
+- Rebuild for sclo-ror42 SCL
+
 * Mon Aug 24 2015 Josef Stribny <jstribny@redhat.com> - 6.0.3-1
 - Update to 6.0.3
 
