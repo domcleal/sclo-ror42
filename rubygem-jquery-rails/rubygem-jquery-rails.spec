@@ -65,7 +65,6 @@ popd
 %{gem_instdir}/vendor
 %exclude %{gem_cache}
 %exclude %{gem_instdir}/.*
-%exclude %{gem_instdir}/Gemfile.lock
 %{gem_spec}
 
 %files doc
