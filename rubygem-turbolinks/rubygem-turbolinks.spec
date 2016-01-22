@@ -7,7 +7,7 @@
 Summary:        Turbolinks makes following links in your web application faster
 Name:           %{?scl_prefix}rubygem-%{gem_name}
 Version:        2.5.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Group:          Development/Languages
 License:        MIT
 URL:            http://github.com/rails/turbolinks
@@ -67,6 +67,9 @@ cp -a .%{gem_dir}/* \
 %{gem_instdir}/test
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 2.5.3-2
+- Rebuild for sclo-ror42 SCL
+
 * Wed Oct 14 2015 Josef Stribny <jstribny@redhat.com> - 2.5.3-1
 - Update to 2.5.3
 
