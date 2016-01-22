@@ -9,7 +9,7 @@
 Summary: Daylight-savings aware timezone library
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.2.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://tzinfo.github.io/
@@ -76,6 +76,9 @@ popd
 %{gem_docdir}
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.2.2-2
+- Rebuild for sclo-ror42 SCL
+
 * Fri Jan 16 2015 Josef Stribny <jstribny@redhat.com> - 1.2.2-1
 - Update to 1.2.2
 
