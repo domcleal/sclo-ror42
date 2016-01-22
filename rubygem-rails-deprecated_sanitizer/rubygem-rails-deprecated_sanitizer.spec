@@ -9,7 +9,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.0.3
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Deprecated sanitizer API extracted from Action View
 Group: Development/Languages
 License: MIT
@@ -108,6 +108,9 @@ popd
 %{gem_instdir}/test
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.0.3-4
+- Rebuild for sclo-ror42 SCL
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.3-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
