@@ -6,7 +6,7 @@
 Summary:        Allows Ruby scripts to interface with a SQLite3 database
 Name:           %{?scl_prefix}rubygem-%{gem_name}
 Version:        1.3.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Group:          Development/Languages
 License:        BSD
 URL:            https://github.com/sparklemotion/sqlite3-ruby
@@ -90,6 +90,9 @@ popd
 
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.3.10-2
+- Rebuild for sclo-ror42 SCL
+
 * Mon Jan 19 2015 Josef Stribny <jstribny@redhat.com> - 1.3.10-1
 - Update to 1.3.10
 
