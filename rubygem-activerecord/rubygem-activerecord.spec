@@ -8,7 +8,7 @@ Summary: Implements the ActiveRecord pattern for ORM
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Epoch: 1
 Version: 4.2.5
-Release: 2%{?dist}
+Release: 3%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://www.rubyonrails.org
@@ -131,6 +131,9 @@ popd
 %doc %{gem_instdir}/examples
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5-3
+- Ignore up to one test error
+
 * Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5-2
 - Rebuild for sclo-ror42 SCL
 
