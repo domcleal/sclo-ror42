@@ -9,7 +9,7 @@
 Summary: Behaviour driven development (BDD) framework for Ruby
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 2.14.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://rspec.info
@@ -52,6 +52,9 @@ cp -a .%{gem_dir}/* %{buildroot}%{gem_dir}
 %{gem_spec}
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 2.14.1-2
+- Rebuild for sclo-ror42 SCL
+
 * Fri Jan 16 2015 Josef Stribny <jstribny@redhat.com> - 2.14.1-1
 - Update to 2.14.1
 
