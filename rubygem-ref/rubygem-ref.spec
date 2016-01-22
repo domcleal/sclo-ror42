@@ -7,7 +7,7 @@
 Summary: Library that implements weak, soft, and strong references in Ruby
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.0.5
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://github.com/bdurand/ref
@@ -89,6 +89,9 @@ popd
 %exclude %{gem_instdir}/test/*.rbc
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.0.5-2
+- Rebuild for sclo-ror42 SCL
+
 * Mon Jan 26 2015 Josef Stribny <jstribny@redhat.com> - 1.0.5-1
 - Update to 1.0.5
 
