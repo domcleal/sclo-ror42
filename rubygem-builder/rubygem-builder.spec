@@ -6,7 +6,7 @@
 Summary: Builders for MarkUp
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 3.2.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://onestepback.org
@@ -119,6 +119,9 @@ popd
 %{gem_instdir}/test/
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 3.2.2-2
+- Rebuild for sclo-ror42 SCL
+
 * Thu Jan 15 2015 Josef Stribny <jstribny@redhat.com> - 3.2.2-1
 - Update to 3.2.2
 
