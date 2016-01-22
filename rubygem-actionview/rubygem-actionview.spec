@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 4.2.5
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Rendering framework putting the V in MVC (part of Rails)
 Group: Development/Languages
 License: MIT
@@ -101,6 +101,9 @@ popd
 %doc %{gem_instdir}/CHANGELOG.md
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5-3
+- Rebuild for sclo-ror42 SCL
+
 * Wed Nov 18 2015 Pavel Valena <pvalena@redhat.com> - 4.2.5-2
 - Enable tests
 
