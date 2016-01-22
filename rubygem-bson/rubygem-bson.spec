@@ -5,7 +5,7 @@
 Summary: Ruby implementation of BSON
 Name: %{?scl:%scl_prefix}rubygem-%{gem_name}
 Version: 1.10.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: ASL 2.0 
 URL: http://www.mongodb.org
@@ -96,6 +96,9 @@ popd
 
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.10.2-2
+- Rebuild for sclo-ror42 SCL
+
 * Thu Jun 26 2014 Vít Ondruch <vondruch@redhat.com> - 1.10.2-1
 - Update to bson 1.10.2.
 
