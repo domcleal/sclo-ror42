@@ -5,7 +5,7 @@
 %global gem_name sprockets-rails
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
-Version: 2.3.2
+Version: 2.3.3
 Release: 1%{?dist}
 Summary: Sprockets Rails integration
 Group: Development/Languages
@@ -14,8 +14,8 @@ URL: https://github.com/rails/sprockets-rails
 Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
 # Get the tests
 # git clone https://github.com/rails/sprockets-rails.git && cd sprockets-rails/
-# git checkout v2.3.2
-# tar czvf sprockets-rails-2.3.2-tests.tgz test/
+# git checkout v2.3.3
+# tar czvf sprockets-rails-2.3.3-tests.tgz test/
 Source2: sprockets-rails-%{version}-tests.tgz
 Requires: %{?scl_prefix_ruby}ruby(release)
 Requires: %{?scl_prefix_ruby}ruby(rubygems)
