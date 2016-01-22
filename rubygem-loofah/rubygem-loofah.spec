@@ -5,7 +5,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 2.0.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Manipulate and transform HTML/XML documents and fragments
 Group: Development/Languages
 License: MIT
@@ -95,6 +95,9 @@ popd
 %exclude %{gem_instdir}/test
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 2.0.2-3
+- Rebuild for sclo-ror42 SCL
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.0.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
