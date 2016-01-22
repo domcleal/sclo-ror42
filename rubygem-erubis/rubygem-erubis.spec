@@ -8,7 +8,7 @@
 Summary: A fast and extensible eRuby implementation
 Name: %{?scl:%scl_prefix}rubygem-%{gem_name}
 Version: 2.7.0
-Release: 8%{?dist}
+Release: 9%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://www.kuwata-lab.com/erubis/
@@ -115,6 +115,9 @@ popd
 %{gem_docdir}
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 2.7.0-9
+- Rebuild for sclo-ror42 SCL
+
 * Thu Jan 15 2015 Josef Stribny <jstribny@redhat.com> - 2.7.0-8
 - rebuilt for ror41
 
