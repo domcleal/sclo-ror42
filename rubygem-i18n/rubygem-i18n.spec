@@ -6,7 +6,7 @@
 Summary: New wave Internationalization support for Ruby
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 0.7.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Group: Development/Languages
 License: MIT and (BSD or Ruby)
 URL: http://github.com/svenfuchs/i18n
@@ -87,6 +87,9 @@ popd
 %doc %{gem_docdir}
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 0.7.0-3
+- Rebuild for sclo-ror42 SCL
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
