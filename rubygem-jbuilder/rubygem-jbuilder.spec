@@ -8,7 +8,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 2.3.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Create JSON structures via a Builder-style DSL
 Group: Development/Languages
 License: MIT
@@ -91,6 +91,9 @@ popd
 %{gem_instdir}/Appraisals
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 2.3.2-2
+- Rebuild for sclo-ror42 SCL
+
 * Wed Oct 14 2015 Josef Stribny <jstribny@redhat.com> - 2.3.2-1
 - Update to 2.3.2
 
