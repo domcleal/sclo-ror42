@@ -125,6 +125,9 @@ popd
 %doc %{gem_instdir}/README.md
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 3.5.2-1
+- Update sprockets to 3.5.2
+
 * Fri Dec 18 2015 Dominic Cleal <dcleal@redhat.com> 3.2.0-3
 - Fix missing provides rubygem
 
