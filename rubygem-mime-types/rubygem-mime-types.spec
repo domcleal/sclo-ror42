@@ -7,7 +7,7 @@
 Summary: Return the MIME Content-Type for a given filename
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.25.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: GPL+ or Ruby or Artistic
 URL: http://mime-types.rubyforge.org/
@@ -91,6 +91,9 @@ popd
 %{gem_instdir}/test
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.25.1-2
+- Rebuild for sclo-ror42 SCL
+
 * Fri Jan 16 2015 Josef Stribny <jstribny@redhat.com> - 1.25.1-1
 - Update to 1.25.1
 
