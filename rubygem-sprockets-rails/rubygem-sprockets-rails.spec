@@ -89,6 +89,9 @@ popd
 %doc %{gem_instdir}/README.md
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 2.3.3-1
+- Update sprockets-rails to 2.3.3
+
 * Mon Jun 29 2015 Josef Stribny <jstribny@redhat.com> - 2.3.2-1
 - Update to 2.3.2
 
