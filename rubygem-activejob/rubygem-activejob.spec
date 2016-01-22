@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 4.2.5
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Job framework with pluggable queues
 Group: Development/Languages
 License: MIT
@@ -101,6 +101,9 @@ popd
 %doc %{gem_instdir}/README.md
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5-2
+- Rebuild for sclo-ror42 SCL
+
 * Wed Nov 18 2015 Pavel Valena <pvalena@redhat.com> - 4.2.5-1
 - Update to activejob 4.2.5
 
