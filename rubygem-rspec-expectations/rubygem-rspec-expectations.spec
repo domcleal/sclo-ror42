@@ -9,7 +9,7 @@
 Summary:	Rspec-2 expectations (should and matchers) 
 Name:		%{?scl_prefix}rubygem-%{gem_name}
 Version:2.14.5
-Release:3%{?dist}
+Release:4%{?dist}
 
 Group:		Development/Languages
 License:	MIT
@@ -80,6 +80,9 @@ popd
 %{gem_instdir}/spec/
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 2.14.5-4
+- Rebuild for sclo-ror42 SCL
+
 * Fri Jan 16 2015 Josef Stribny <jstribny@redhat.com> - 2.14.5-3
 - Enable tests
 
