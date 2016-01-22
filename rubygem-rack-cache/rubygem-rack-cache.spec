@@ -8,7 +8,7 @@
 Summary: HTTP Caching for Rack
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.2
-Release: 7%{?dist}
+Release: 8%{?dist}
 Group: Development/Languages
 License: MIT
 # The URL doesn't work.
@@ -81,6 +81,9 @@ popd
 %{gem_instdir}/test
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.2-8
+- Rebuild for sclo-ror42 SCL
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.2-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
