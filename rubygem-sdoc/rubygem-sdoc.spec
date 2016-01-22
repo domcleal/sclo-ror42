@@ -5,7 +5,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 0.4.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: RDoc generator to build searchable HTML documentation for Ruby code
 Group: Development/Languages
 # License needs to take RDoc and Darkfish into account apparantly
@@ -118,6 +118,9 @@ popd
 %{gem_instdir}/spec
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 0.4.1-2
+- Rebuild for sclo-ror42 SCL
+
 * Mon Aug 18 2014 Josef Stribny <jstribny@redhat.com> - 0.4.1-1
 - Update to 0.4.1
 
