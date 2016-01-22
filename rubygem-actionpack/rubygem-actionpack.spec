@@ -10,7 +10,7 @@ Summary: Web-flow and rendering framework putting the VC in MVC
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Epoch: 1
 Version: 4.2.5
-Release: 2%{?dist}
+Release: 3%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://www.rubyonrails.org
@@ -141,6 +141,9 @@ popd
 %{gem_instdir}/test/
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5-3
+- Rebuild for sclo-ror42 SCL
+
 * Wed Nov 18 2015 Pavel Valena <pvalena@redhat.com> - 1:4.2.5-2
 - Enable tests
 
