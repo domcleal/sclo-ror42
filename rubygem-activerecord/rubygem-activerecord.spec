@@ -97,7 +97,7 @@ set -e
 # Running them in complete isolation solves the problem but takes too much time.
 # So accepting up to 5 failures.
 %{?scl:scl enable %{scl} - << \EOS}
-ruby -I.:test:lib <<EOF | egrep "(1|2|3|4|5) failures"
+ruby -I.:test:lib <<EOF | egrep ", (0|1|2|3|4|5) failures, (0|1) errors"
   test_files = Dir.glob( "test/cases/**/*_test.rb" )
   test_files.reject! { |x| x =~ %r|/adapters/| }
 
