@@ -8,7 +8,7 @@
 Summary: Generic interface to multiple Ruby template engines
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.4.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://github.com/rtomayko/%{gem_name}
@@ -114,6 +114,9 @@ popd
 
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.4.1-2
+- Rebuild for sclo-ror42 SCL
+
 * Fri Jan 16 2015 Josef Stribny <jstribny@redhat.com> - 1.4.1-1
 - Update to 1.4.1
 
