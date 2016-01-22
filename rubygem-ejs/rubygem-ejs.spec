@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.1.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: EJS (Embedded JavaScript) template compiler
 Group: Development/Languages
 License: MIT
@@ -92,6 +92,9 @@ popd
 %doc %{gem_instdir}/README.md
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.1.1-3
+- Rebuild for sclo-ror42 SCL
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
