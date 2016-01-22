@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 5.0.4
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Sass adapter for the Rails asset pipeline
 Group: Development/Languages
 License: MIT
@@ -100,6 +100,9 @@ popd
 %doc %{gem_instdir}/README.md
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 5.0.4-2
+- Rebuild for sclo-ror42 SCL
+
 * Wed Sep 16 2015 Vít Ondruch <vondruch@redhat.com> - 5.0.4-1
 - Update to sass-rails 5.0.4.
 
