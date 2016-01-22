@@ -5,7 +5,7 @@
 %global gem_name rails-deprecated_sanitizer
 
 # To break BuildReq loop between this and actionview
-%global bootstrap 1
+%global bootstrap 0
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.0.3

@@ -3,7 +3,7 @@
 
 %global gem_name sinatra
 
-%global bootstrap 1
+%global bootstrap 0
 
 Summary:        Ruby-based web application framework
 Name:           %{?scl_prefix}rubygem-%{gem_name}

@@ -4,7 +4,7 @@
 %global	gem_name	rspec-expectations
 
 # %%check section needs rspec, however rspec depends on rspec-expectations
-%global	need_bootstrap	1
+%global	need_bootstrap	0
 
 Summary:	Rspec-2 expectations (should and matchers) 
 Name:		%{?scl_prefix}rubygem-%{gem_name}

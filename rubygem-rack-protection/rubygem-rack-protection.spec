@@ -3,7 +3,7 @@
 
 %global gem_name rack-protection
 
-%global bootstrap 1
+%global bootstrap 0
 
 Summary:        Ruby gem that protects against typical web attacks
 Name:           %{?scl_prefix}rubygem-%{gem_name}

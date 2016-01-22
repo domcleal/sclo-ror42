@@ -4,7 +4,7 @@
 %global gem_name diff-lcs
 
 # %%check section needs rspec, however rspec depends on rspec-expectations which depends on this package
-%global	need_bootstrap	1
+%global	need_bootstrap	0
 
 Summary:        Provide a list of changes between two sequenced collections
 Name:           %{?scl_prefix}rubygem-%{gem_name}

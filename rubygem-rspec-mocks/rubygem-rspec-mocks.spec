@@ -4,7 +4,7 @@
 %global	gem_name	rspec-mocks
 
 # %%check section needs rspec, however rspec depends on rspec-mocks
-%global	need_bootstrap	1
+%global	need_bootstrap	0
 
 Summary:	Rspec-2 doubles (mocks and stubs)
 Name:		%{?scl_prefix}rubygem-%{gem_name}
