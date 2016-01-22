@@ -7,7 +7,7 @@
 Summary: Run JavaScript code from Ruby
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 2.2.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 # Public Domain: %%{gem_libdir}/execjs/support/json2.js
 License: MIT and Public Domain
@@ -77,6 +77,9 @@ popd
 %doc %{gem_instdir}/README.md
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 2.2.0-2
+- Rebuild for sclo-ror42 SCL
+
 * Mon Jan 26 2015 Josef Stribny <jstribny@redhat.com> - 2.2.0-1
 - Update to 2.2.0
 
