@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 0.3.3
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Refer to any model with a URI: gid://app/class/id
 Group: Development/Languages
 License: MIT
@@ -85,6 +85,9 @@ popd
 %doc %{gem_docdir}
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 0.3.3-3
+- Rebuild for sclo-ror42 SCL
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
