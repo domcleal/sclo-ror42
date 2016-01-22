@@ -5,8 +5,8 @@
 %global gem_name sprockets
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
-Version: 3.2.0
-Release: 3%{?dist}
+Version: 3.5.2
+Release: 1%{?dist}
 Summary: Rack-based asset packaging system
 Group: Development/Languages
 License: MIT
@@ -14,16 +14,21 @@ URL: https://github.com/rails/sprockets
 Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
 # to get tests:
 # git clone https://github.com/rails/sprockets.git && cd sprockets/
-# git checkout v3.2.0 && tar czf sprockets-3.2.0-tests.tgz test/
+# git checkout v3.5.2 && tar czf sprockets-3.5.2-tests.tgz test/
 Source1: sprockets-%{version}-tests.tgz
+Patch0: sprockets-3.5.2-fix-zlib-gzipwriter-stub.patch
 Requires: %{?scl_prefix_ruby}ruby(release)
 Requires: %{?scl_prefix_ruby}ruby(rubygems)
-Requires: %{?scl_prefix}rubygem(rack) >= 1.0
-Requires: %{?scl_prefix}rubygem(rack) < 2
+Requires: %{?scl_prefix}rubygem(concurrent-ruby) >= 1.0
+Requires: %{?scl_prefix}rubygem(concurrent-ruby) < 2
+Requires: %{?scl_prefix}rubygem(rack) > 1
+Requires: %{?scl_prefix}rubygem(rack) < 3
 BuildRequires: %{?scl_prefix_ruby}ruby(release)
 BuildRequires: %{?scl_prefix_ruby}rubygems-devel
 BuildRequires: %{?scl_prefix_ruby}ruby >= 1.9.3
 BuildRequires: %{?scl_prefix}rubygem(coffee-script)
+BuildRequires: %{?scl_prefix}rubygem(concurrent-ruby) >= 1.0
+BuildRequires: %{?scl_prefix}rubygem(concurrent-ruby) < 2
 BuildRequires: %{?scl_prefix}rubygem(ejs)
 BuildRequires: %{?scl_prefix}rubygem(execjs)
 BuildRequires: %{?scl_prefix_ruby}rubygem(minitest)
@@ -75,6 +80,10 @@ find %{buildroot}%{gem_instdir}/bin -type f | xargs chmod a+x
 pushd .%{gem_instdir}
 tar xzf %{SOURCE1}
 
+# Fix incorrect test showing up under minitest 5.4:
+# https://github.com/rails/sprockets/pull/225
+patch -p1 --fuzz=0 < %{PATCH0}
+
 # We don't have rubygem(closure-compiler) yet.
 # https://bugzilla.redhat.com/show_bug.cgi?id=725733
 mv test/test_closure_compressor.rb{,.disabled}
@@ -112,6 +121,7 @@ popd
 
 %files doc
 %doc %{gem_docdir}
+%doc %{gem_instdir}/CHANGELOG.md
 %doc %{gem_instdir}/README.md
 
 %changelog
