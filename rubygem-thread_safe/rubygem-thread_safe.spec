@@ -15,7 +15,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 0.3.5
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Thread-safe collections and utilities for Ruby
 Group: Development/Languages
 # jsr166e.LondAdder, jsr166e.Striped64, jsr166e.ConcurrentHashMapV8
@@ -114,6 +114,9 @@ ruby -Ilib -e \
 
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 0.3.5-2
+- Rebuild for sclo-ror42 SCL
+
 * Tue Mar 24 2015 Ken Dreyer <ktdreyer@ktdreyer.com> - 0.3.5-1
 - Update to 0.3.5
 - New upstream URL.
