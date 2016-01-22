@@ -63,5 +63,5 @@ cp -a .%{gem_dir}/* \
 %doc %{gem_docdir}
 
 %changelog
-* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> - 1.0.0-1
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.0.0-1
 - New package
