@@ -4,7 +4,7 @@
 %global gem_name therubyracer
 
 %global majorver 0.11.0
-%global release 8
+%global release 9
 #%%global preminorver beta5
 %global fullver %{majorver}%{?preminorver}
 
@@ -140,6 +140,9 @@ popd
 %{gem_instdir}/therubyracer.gemspec
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 0.11.0-9
+- Rebuild for sclo-ror42 SCL
+
 * Mon Jan 26 2015 Josef Stribny <jstribny@redhat.com> - 0.11.0-8
 - Fix ext installation
 
