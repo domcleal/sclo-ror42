@@ -86,6 +86,9 @@ find %{buildroot}%{gem_instdir}/bin -type f | xargs chmod a+x
 %doc %{gem_instdir}/README.md
 
 %changelog
+* Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.4.0-1
+- Update to 1.4.0
+
 * Tue Feb 03 2015 Vít Ondruch <vondruch@redhat.com>
 - ps is located on different path in different package on RHEL6.
 
