@@ -62,6 +62,7 @@ Summary: Package shipping basic build configuration
 Requires: scl-utils-build
 Requires: %{scl_runtime}
 Requires: %{scl_prefix_ruby}scldevel
+Requires: v8314-scldevel
 
 %description build
 Package shipping essential configuration macros to build %scl Software Collection.
