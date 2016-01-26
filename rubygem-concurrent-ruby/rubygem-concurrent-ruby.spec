@@ -6,7 +6,7 @@
 Summary: Modern concurrency tools for Ruby
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: https://github.com/ruby-concurrency/concurrent-ruby
@@ -63,5 +63,8 @@ cp -a .%{gem_dir}/* \
 %doc %{gem_docdir}
 
 %changelog
+* Tue Jan 26 2016 Dominic Cleal <dcleal@redhat.com> 1.0.0-2
+- Fix -doc dependency on main package
+
 * Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.0.0-1
 - New package
