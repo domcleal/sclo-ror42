@@ -5,8 +5,8 @@
 %global gem_name rails-html-sanitizer
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
-Version: 1.0.2
-Release: 2%{?dist}
+Version: 1.0.3
+Release: 1%{?dist}
 Summary: This gem is responsible to sanitize HTML fragments in Rails applications
 Group: Development/Languages
 License: MIT
@@ -75,15 +75,14 @@ pushd .%{gem_instdir}
 %{?scl:scl enable %{scl} - << \EOF}
 ruby -Ilib -e 'Dir.glob "./test/**/*_test.rb", &method(:require)' | grep \
   %if 0%{?el6}
-  "295 runs, 308 assertions, 2 failures, 0 errors, 0 skips"
+  "301 runs, 318 assertions, 2 failures, 0 errors, 0 skips"
   %else
-  "295 runs, 308 assertions, 0 failures, 0 errors, 0 skips"
+  "301 runs, 318 assertions, 0 failures, 0 errors, 0 skips"
   %endif
 %{?scl:EOF}
 popd
 
 %files
-%doc %{gem_instdir}/LICENSE.txt
 %dir %{gem_instdir}
 %{gem_libdir}
 %exclude %{gem_cache}
