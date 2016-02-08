@@ -95,6 +95,9 @@ popd
 %{gem_instdir}/test
 
 %changelog
+* Mon Feb 08 2016 Dominic Cleal <dcleal@redhat.com> 1.0.3-1
+- Update rails-html-sanitizer to 1.0.3
+
 * Fri Dec 18 2015 Dominic Cleal <dcleal@redhat.com> 1.0.2-2
 - Ignore libxml2 related test failure on EL6
 
