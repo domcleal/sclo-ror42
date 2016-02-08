@@ -101,6 +101,9 @@ popd
 %doc %{gem_instdir}/CHANGELOG.md
 
 %changelog
+* Mon Feb 08 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5.1-1
+- Update Rails to 4.2.5.1
+
 * Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5-3
 - Rebuild for sclo-ror42 SCL
 
