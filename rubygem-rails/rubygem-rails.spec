@@ -8,8 +8,8 @@
 Summary: Web-application framework
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Epoch: 1
-Version: 4.2.5
-Release: 2%{?dist}
+Version: 4.2.5.1
+Release: 1%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://www.rubyonrails.org

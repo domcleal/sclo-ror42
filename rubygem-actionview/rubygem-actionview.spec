@@ -5,8 +5,8 @@
 %global bootstrap 1
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
-Version: 4.2.5
-Release: 3%{?dist}
+Version: 4.2.5.1
+Release: 1%{?dist}
 Summary: Rendering framework putting the V in MVC (part of Rails)
 Group: Development/Languages
 License: MIT
@@ -14,8 +14,8 @@ URL: http://www.rubyonrails.org
 Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
 # git clone http://github.com/rails/rails.git
 # cd rails/actionview/
-# git checkout v4.2.5
-# tar czvf actionview-4.2.5-tests.tgz test/
+# git checkout v4.2.5.1
+# tar czvf actionview-4.2.5.1-tests.tgz test/
 Source1: %{gem_name}-%{version}-tests.tgz
 Requires: %{?scl_prefix_ruby}ruby(release)
 Requires: %{?scl_prefix_ruby}ruby(rubygems)
