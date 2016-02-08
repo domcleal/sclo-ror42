@@ -120,6 +120,9 @@ popd
 %{gem_instdir}/test
 
 %changelog
+* Mon Feb 08 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5.1-1
+- Update Rails to 4.2.5.1
+
 * Thu Dec 17 2015 Dominic Cleal <dcleal@redhat.com> 4.2.5-2
 - Fix dependency on minitest
 
