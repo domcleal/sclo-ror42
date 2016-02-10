@@ -7,7 +7,7 @@
 %global download_path http://rubygems.org/downloads/
 
 
-%global runtests 0
+%global runtests 1
 
 Summary: Tools for creating, working with, and running Rails applications
 Name: %{?scl_prefix}rubygem-%{gem_name}
@@ -96,7 +96,7 @@ ln -s %{gem_dir}/gems/actionmailer-%{version}/ .%{gem_dir}/gems/actionmailer
 ln -s ${PWD}%{gem_instdir} .%{gem_dir}/gems/railties
 touch .%{gem_dir}/gems/load_paths.rb
 touch .%{gem_dir}/gems/Gemfile
-export RUBYOPT="-I${PWD}%{gem_dir}/gems/railties:${PWD}%{gem_dir}/gems/railties/lib:${PWD}%{gem_dir}/gems/railties/test -rrails/all"
+export RUBYOPT="-I${PWD}%{gem_dir}/gems/railties:${PWD}%{gem_dir}/gems/railties/lib:${PWD}%{gem_dir}/gems/railties/test"
 export PATH="${PWD}%{gem_dir}/gems/railties/bin:$PATH"
 
 pushd .%{gem_dir}/gems/railties
@@ -108,8 +108,7 @@ sed -i -e "s|require 'bundler/setup' unless defined?(Bundler)||" test/isolation/
 
 # TODO: Test are not yet in the best state.
 %{?scl:scl enable %{scl} - << \EOF}
-ruby -I. -e 'Dir.glob("test/**/*_test.rb").sort.each {|t| require t}' \
-  | grep "1012 runs, 2433 assertions, 129 failures, 330 errors, 0 skips"
+ruby -I. -rrails/all -e 'Dir.glob("test/**/*_test.rb").sort.each {|t| require t}' || :
 %{?scl:EOF}
 popd
 %endif
