@@ -9,7 +9,7 @@
 Summary:        Provide a list of changes between two sequenced collections
 Name:           %{?scl_prefix}rubygem-%{gem_name}
 Version:        1.2.5
-Release:        3%{?dist}
+Release:        4%{?dist}
 Group:          Development/Languages
 #lib/diff/lcs.rb is Artistic or Ruby or BSD
 #lib/diff/lcs/*.rb is GPLv2+ or Artistic or Ruby or BSD
@@ -97,6 +97,9 @@ popd
 
 
 %changelog
+* Wed Feb 10 2016 Dominic Cleal <dcleal@redhat.com> 1.2.5-4
+- Enable package check
+
 * Fri Jan 22 2016 Dominic Cleal <dcleal@redhat.com> 1.2.5-3
 - Rebuild for sclo-ror42 SCL
 
