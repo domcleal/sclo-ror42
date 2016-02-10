@@ -12,7 +12,7 @@
 Summary: Tools for creating, working with, and running Rails applications
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 4.2.5.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://www.rubyonrails.org
@@ -129,6 +129,9 @@ popd
 %doc %{gem_instdir}/README.rdoc
 
 %changelog
+* Wed Feb 10 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5.1-2
+- Unset -r RUBYOPT argument, as it breaks ror42's enable scriptlet
+
 * Mon Feb 08 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5.1-1
 - Update Rails to 4.2.5.1
 
