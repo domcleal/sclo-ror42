@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 4.2.5.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Rendering framework putting the V in MVC (part of Rails)
 Group: Development/Languages
 License: MIT
@@ -108,6 +108,9 @@ popd
 %doc %{gem_instdir}/CHANGELOG.md
 
 %changelog
+* Thu Mar 10 2016 Dominic Cleal <dominic@cleal.org> 4.2.5.1-2
+- Fix insecure params calls from views, CVE-2016-2098
+
 * Mon Feb 08 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5.1-1
 - Update Rails to 4.2.5.1
 
