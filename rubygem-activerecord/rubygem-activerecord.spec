@@ -8,7 +8,7 @@ Summary: Implements the ActiveRecord pattern for ORM
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Epoch: 1
 Version: 4.2.5.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://www.rubyonrails.org
@@ -136,6 +136,9 @@ popd
 %doc %{gem_instdir}/examples
 
 %changelog
+* Thu Mar 10 2016 Dominic Cleal <dominic@cleal.org> 4.2.5.1-2
+- Fix attribute dirty checks after #dup
+
 * Mon Feb 08 2016 Dominic Cleal <dcleal@redhat.com> 4.2.5.1-1
 - Update Rails to 4.2.5.1
 
