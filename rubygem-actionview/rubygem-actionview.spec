@@ -17,6 +17,8 @@ Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
 # git checkout v4.2.5.1
 # tar czvf actionview-4.2.5.1-tests.tgz test/
 Source1: %{gem_name}-%{version}-tests.tgz
+Patch0: rubygem-actionview-4.2.5.1-CVE-2016-2098.patch
+Patch1: rubygem-actionview-4.2.5.1-CVE-2016-2098-tests.patch
 Requires: %{?scl_prefix_ruby}ruby(release)
 Requires: %{?scl_prefix_ruby}ruby(rubygems)
 Requires: %{?scl_prefix}rubygem(activesupport) = %{version}
@@ -60,6 +62,10 @@ Documentation for %{pkg_name}.
 %gem_install -n %{SOURCE0}
 %{?scl:EOF}
 
+pushd .%{gem_instdir}
+%patch0 -p2
+popd
+
 %build
 
 %install
@@ -72,6 +78,7 @@ cp -pa .%{gem_dir}/* \
 pushd .%{gem_instdir}
 
 tar xzvf %{SOURCE1} -C .
+patch -p2 < %{PATCH1}
 
 # This requires rails git structure and only requires bundler in the end
 sed -i "s|require File.expand_path('../../../load_paths', __FILE__)||" ./test/abstract_unit.rb
